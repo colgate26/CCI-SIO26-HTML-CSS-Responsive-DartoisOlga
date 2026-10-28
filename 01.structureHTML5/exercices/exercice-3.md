@@ -11,6 +11,11 @@
 ## Situations
 
 1.  `<ul>`+`<il>` car on veux lister les étapes dans l'ordre
+
 2. `<ol>`+`<il>` car on veux lister quelque chose sans ordre particulier
+
 3. `<strong>` pour le mettre en évidence car c'est important
-4. `<b>` pour mettre en gras pour insister sur le mot
+
+4. `<b>` pour mettre en gras pour insister sur le mot 
+
+   
