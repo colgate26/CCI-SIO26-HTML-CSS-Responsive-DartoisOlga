@@ -9,13 +9,13 @@ Ce langage de balisage est une langage qui sert à annoter un texte avec des mar
 **Exemples de balises**  :
 
 ```html
-<header>	#En-tête de la page ou d’une section (logo, titre, menu)
-<nav> 		#Bloc de liens de navigation
-<main>		#Contenu principal, un seul par page
-<article>	#Contenu autonome (article de blog, actualité)
-<section>	#Regroupement thématique de contenu, généralement avec un titre
-<aside>		#Contenu annexe (encadré, publicité, liens connexes)
-<footer>	#Pied de page (mentions légales, contact)
+<header>	<!--En-tête de la page ou d’une section (logo, titre, menu)-->
+<nav> 		<!--Bloc de liens de navigation-->
+<main>		<!--Contenu principal, un seul par page-->
+<article>	<!--Contenu autonome (article de blog, actualité)-->
+<section>	<!--Regroupement thématique de contenu, généralement avec un titre-->
+<aside>		<!--Contenu annexe (encadré, publicité, liens connexes)-->
+<footer>	<!--Pied de page (mentions légales, contact)-->
 ```
 
 ### Autres commandes
@@ -57,6 +57,30 @@ Ces commandes décrivent les titre hiérarchisés et se placent dans <body>.
 
 Cette commande définit un paragraphe.
 
+```html
+<ul>
+```
+
+Cette commande décrit une liste non ordonnées, c'est à dire que l'ordre n'a pas d'importance.
+
+```html
+<ol>
+```
+
+Cette commande décrit elle aussi une liste mais contrairement à `<ul>` c'est une liste ordonnées donc l'ordre est important.
+
+```html
+<strong>
+```
+
+Cette commande indique une forte importance du contenu (un avertissement par exemple).
+
+```html
+<b>
+```
+
+Cette commande permet aussi la mise en avant d'un contenu mais contrairement à `<strong>` elle n'a pas une forte importance, c'est purement visuelle.
+
 Les commandes suivantes sont des sont des attributs. Ils se placent à l’intérieur d’une balise ouvrante pour la préciser :
 
 **lang="fr"**
@@ -97,10 +121,16 @@ HTML et CSS sont des langages déclaratifs (ils décrivent, ils n’exécutent p
 
 
 
-### Exemple de document minimal
+### Règles de hiérarchie des titres et différence sémantique/présentation 
+
+La sémantique en HTML, c'est le fait de choisir une balise pour son sens et non pour son apparence. En effet une balise sémantique décrit le rôle et non l'aspect. On n'utilisera pas `h1` pour obtenir un texte plus grand. Dans un site web le plan peut être utilisé pour naviguer dedans, de ce fait cette utilisation affectera la hiérarchie qui est très importante. En effet elle permet notamment au mal voyant de naviguer dans un site web, de comprendre le plan de la page et de se déplacer plus rapidement sur la partie qui nous intéresse 
+
+
+
+### Exemple de document 
 
 ```html
-<!DOCTYPE html>			   	#document en HTML5
+<!DOCTYPE html>			   	<!--document en HTML5-->
 <html lang="fr"> 		  	#langue francais
   <head> 				   	#métadonnées
     <meta charset="UTF-8"> 	#affiche correctement les accents
@@ -111,4 +141,8 @@ HTML et CSS sont des langages déclaratifs (ils décrivent, ils n’exécutent p
   </body>
 </html>
 ```
+
+
+
+
 
