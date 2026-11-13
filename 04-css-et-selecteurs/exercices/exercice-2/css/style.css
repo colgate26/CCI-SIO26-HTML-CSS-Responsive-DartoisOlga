@@ -1,0 +1,9 @@
+p { color: darkgray; }
+.important { font-weight: bold; }
+#entete { background-color: blue; }
+h1, h2 { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+p.important { color: red; }
+a.actif { color: orange; }
+footer p { font-size: smaller; }
+#agenda li { color: green; }
+.important.rappel { font-style: italic; }
