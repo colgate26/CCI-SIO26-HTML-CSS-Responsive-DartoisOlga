@@ -1,0 +1,24 @@
+#titre-page {
+    font-size: 2.5rem;
+}
+
+.alerte {
+    color: red;
+    font-weight: bold;
+}
+
+.info {
+    color: green;
+}
+
+.actif {
+    color: green;
+}
+
+.liste-services .actif {
+    color: gray;
+}
+
+.lien {
+    font-size: 1.2rem;
+}
