@@ -40,3 +40,10 @@ Même poids les deux donc c'est la dernière règle qui l'emporte, on obtient do
 
 4.
 
+1. `!important`
+2. Style en ligne 
+3. `#id`
+4. Classe
+5. Balise
+
+Bleu car `!important` l'emporte
