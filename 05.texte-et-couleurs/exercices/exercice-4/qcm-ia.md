@@ -64,33 +64,122 @@ Correction de l'IA : Correct. `font-weight` règle l'épaisseur, `font-style` l'
 Réponse initiale : juste 
 À retenir :
 
-Question n°6 : 
+Question n°6 : Un site affiche son texte en `#999999` sur fond blanc. Le texte courant doit respecter le niveau AA des WCAG.
 
-Réponse (avant correction) :
-Correction de l'IA :
-Réponse initiale : juste / partiellement juste / fausse
+1. Quel rapport de contraste minimum est exigé ?
+2. Penses-tu que cette combinaison le respecte ? Dis oui ou non, et propose une couleur de texte plus sûre.
+
+Réponse (avant correction) : 1) le rapport de contraste minimum exigé est de 4,5:1 2) je pense pas car elle sont toutes les deux clair et dans les meme tons, je pense qu'un gris foncé #444444 en revanche le respect.
+Correction de l'IA :Correct.
+
+1. Le minimum est bien de 4,5:1 pour un texte normal (3:1 pour un grand texte).
+2. Ta réponse est juste : `#999999` sur blanc donne environ 2,8:1, donc la combinaison échoue. Ton raisonnement (deux couleurs claires, peu de différence de luminosité) est le bon réflexe. Et `#444444` sur blanc donne environ 9,7:1, donc il respecte largement le seuil.
+
+Réponse initiale : juste 
 À retenir :
 
-Question n°7 : 
-Réponse (avant correction) :
-Correction de l'IA :
-Réponse initiale : juste / partiellement juste / fausse
+Question n°7 : Voici une feuille de style et son HTML :
+
+html
+
+```html
+<p id="note" class="texte">Bonjour</p>
+```
+
+css
+
+```css
+.texte { color: green; }
+p { color: blue; }
+#note { color: orange; }
+p.texte { color: purple; }
+```
+
+Quelle couleur obtient le paragraphe ?
+
+Réponse (avant correction) : orange 
+Correction de l'IA : Correct : orange.
+
+`#note` est la seule règle avec une valeur dans la première colonne : (1, 0, 0) contre (0, x, x) pour les trois autres. La comparaison s'arrête dès cette colonne, donc `#note` gagne.
+
+Réponse initiale : juste 
 À retenir :
 
-Question n°8 : 
-Réponse (avant correction) :
-Correction de l'IA :
-Réponse initiale : juste / partiellement juste / fausse
+Question n°8 : Dans ce code :
+
+css
+
+```css
+.alerte {
+    color: red;
+}
+```
+
+Pourquoi ne suffit-il pas de colorer le message d'alerte en rouge pour que l'information soit accessible à tout le monde ? Propose une amélioration.
+
+Réponse (avant correction) : il faudrait la mettre en font-weight: bold pour le mettre en gras si jamais on ne distingue pas le changement de couleur
+Correction de l'IA : Correct. `font-weight: bold` rend l'alerte reconnaissable par sa forme et pas seulement par sa couleur : même sans percevoir le rouge, le texte ressort parce qu'il est en gras.
+
+css
+
+```css
+.alerte {
+    color: #b40b0b;
+    font-weight: bold;
+}
+```
+
+Tu aurais pu aussi citer `font-size` ou, côté contenu, un mot (« Attention : ») ou une icône. La règle à retenir : ne jamais transmettre une information par la couleur seule.
+
+Réponse initiale : juste 
+À retenir : La règle à retenir : ne jamais transmettre une information par la couleur seule.
+
+Question n°9 : Pour chacune de ces trois unités, dis dans quel cas tu la choisirais : `px`, `em`, `rem`. Une phrase par unité suffit.
+Réponse (avant correction) : px : si je veux mettre quelque chose dans une taille précise indépendamment du reste
+em : si je veux une taille qui s'adapte a don "parents"
+rem : si je veux une taille qui s'adapte a la taille de base
+Correction de l'IA : Correct pour les trois. Tes formulations sont justes :
+
+- `px` donne une taille fixe, indépendante du contexte. On l'utilise pour les détails fins (bordure de 1px, ombre).
+- `em` suit le parent pour `font-size`, ou la taille de police de l'élément lui-même pour les autres propriétés (marges, espacements d'un bouton). Attention au cumul dans les éléments imbriqués.
+- `rem` suit la taille de base de `<html>`, sans cumul.
+
+Il manque une nuance pour `px`. Une taille fixe est utile pour les détails, mais en `font-size` elle ignore le réglage de taille de texte du navigateur, donc on préfère `rem` pour les polices.
+
+Réponse initiale : juste
 À retenir :
 
-Question n°9 : 
-Réponse (avant correction) :
-Correction de l'IA :
-Réponse initiale : juste / partiellement juste / fausse
-À retenir :
+Question n°10 : Voici un extrait d'une feuille de style :
 
-Question n°10 : 
-Réponse (avant correction) :
-Correction de l'IA :
-Réponse initiale : juste / partiellement juste / fausse
+css
+
+```css
+body {
+    background-color: #ffffff;
+    color: #bbbbbb;
+    font-family: "Brush Script MT";
+    font-size: 11px;
+    line-height: 1;
+    text-align: justify;
+}
+```
+
+Trouve au moins trois défauts (lisibilité, accessibilité ou bonnes pratiques) et propose une correction pour chacun.
+
+Réponse (avant correction) : la taille 11 px c'est petit il faudrait plus grand, il faut ajouter d'autres police ou au moins une famille générique, les deux couleur sont trop clair, gris clair et blanc il faudrait mettre du gris foncé
+Correction de l'IA : Bien joué, avec quelques précisions.
+
+Tu as trouvé trois défauts réels :
+
+- Taille de 11px : trop petite. Il fallait préciser une valeur : vise au moins 16px, par exemple `font-size: 1rem` (avec une base à 16px ou 18px).
+- Pas de repli de police : correct. Par exemple `font-family: "Segoe UI", Arial, sans-serif;`.
+- Contraste : correct. `#bbbbbb` sur blanc donne environ 1,9:1, très loin des 4,5:1. Un gris foncé comme `#444444` (environ 9,7:1) convient.
+
+Tu n'as pas relevé trois autres défauts :
+
+- `line-height: 1` : les lignes se touchent. Corrige avec `line-height: 1.5`.
+- `text-align: justify` : espaces irréguliers entre les mots sur colonne étroite. Préfère `left` pour un long texte.
+- Brush Script MT : police décorative, peu lisible pour du texte courant. Une police sans empattement convient mieux.
+
+Réponse initiale : juste 
 À retenir :
